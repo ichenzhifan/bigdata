@@ -1,0 +1,23 @@
+
+.whaley-flex-container.dynamic-height
+		content-menu.whaley-column-flex-container
+		.whaley-flex-element.content-bg
+			.whaley-abs-full-element
+				.main-content.main-data-content(ng-if="allmenus.config.config")
+					section.content-header
+						h1   &nbsp;
+							//- | Dashboard1111
+							//- small Control panel
+						ol.breadcrumb
+							li
+								a(href='javascript:void(0);')
+									i.fa(class="{{allmenus.config.rootPath.iconClz}}")
+									| {{allmenus.config.rootPath.text}}
+							li.active(ng-repeat="path in allmenus.config.childPath track by $index" ng-bind="path")
+							//- li.active Dashboard
+					content-wrapper(ng-repeat="content in allmenus.config.config track by content.name" direct="{{content.type}}" param="{{content}}" id="{{content.id}}") 
+					aside-path
+			lizi-bg(ng-if="!allmenus.config.config")
+			
+			
+			//- .main-content(ui-view="content") scroll.main-content(ng-if="allmenus.config.config") 

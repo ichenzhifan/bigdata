@@ -1,0 +1,9 @@
+.filter-select(uib-dropdown is-open="isopen")
+    button.form-control.full-width-container(uib-dropdown-toggle id="{{selectItem.id}}") 
+        span.seletext.select_spec {{selectItem.name}}&nbsp;
+        span.caret.caret_spec
+    ul.full-width-container.limit-drop-menu(uib-dropdown-menu role="menu" aria-labelledby="{{selectItem.id}}")
+        //- li(role="menuitem")
+        //-     a(href="javascript:void(0);" ng-click="choose($event)" ng-bind="text")
+        li(role="menuitem" ng-repeat="ele in optionlist track by $index")
+            a(href="javascript:void(0);" ng-click="choose($event,ele)" ng-bind="ele.name")

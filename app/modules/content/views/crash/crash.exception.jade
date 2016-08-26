@@ -1,0 +1,69 @@
+.showarea
+	.chart-container.nav-tabs-custom
+		ul.nav.nav-tabs
+			//- li( ng-class="{'active':0 == activeIndex}")
+			//- 	a(href="javascript:void(0)" ng-click="select($event,0,'firstAppear')" ) 首次出现异常
+			//- li( ng-class="{'active':1 == activeIndex}")
+			//- 	a(href="javascript:void(0)" ng-click="select($event,1,'resolved')" ) 已解决异常
+			//- li( ng-class="{'active':2 == activeIndex}")
+			//- 	a(href="javascript:void(0)" ng-click="select($event,2,'reappear')" )  解决后重现异常
+			li(ng-repeat="type in types track by $index " ng-class="{'active':$index == activeIndex}"  )
+				a(href="javascript:void(0)" ng-click="select($event,$index,type)" ng-bind="type.name") 
+
+	date-picker.crash-date-picker(data="datepicker.dt" type="datepicker.type}}" start-day="{{datepicker.startDay}}" fmt="{{datepicker.format}}" load-contentdata="loadData()" no-load="datepicker.noload" )
+	div(style="padding:10px;")
+		div(style="border-bottom:1px solid #ccc;")
+			form(ng-submit="ok()" style="max-width:800px;margin:auto;padding-bottom: 20px;")
+				.row
+					.col-sm-6
+						.input-group.padding-container
+							span.input-label crash最小版本
+							.whaley-cell-container(uib-dropdown is-open="minisopen")
+								button.form-control.full-width-container(uib-dropdown-toggle id="minversionSelect") 
+									span.seletext {{version_option.min.name}}&nbsp;
+									span.caret.caret_spec
+								ul.full-width-container.limit-drop-menu(uib-dropdown-menu role="menu" aria-labelledby="minversionSelect")
+									li(role)
+										.input-group(style="margin: 5px 10px;" ng-click="preventDismiss($event)")
+											input.form-control(type="text" ng-model="version_option.searchMin")
+											span.input-group-addon
+												i.fa.fa-search
+									li(role="menuitem" ng-repeat="ele in version_option.data|versionFilter:version_option.max:version_option.searchMin track by $index")
+										a(href="javascript:void(0);" ng-click="chooseMinVersion($event,ele)" ng-bind="ele.name")
+					.col-sm-6
+						.input-group.padding-container
+							span.input-label crash最大版本
+							.whaley-cell-container(uib-dropdown is-open="maxisopen")
+								button.form-control.full-width-container(uib-dropdown-toggle id="maxversionSelect") 
+									span.seletext {{version_option.max.name}}&nbsp;
+									span.caret.caret_spec
+								ul.full-width-container.limit-drop-menu(uib-dropdown-menu role="menu" aria-labelledby="maxversionSelect")
+									li(role)
+										.input-group(style="margin: 5px 10px;" ng-click="preventDismiss($event)")
+											input.form-control(type="text" ng-model="version_option.searchMax")
+											span.input-group-addon
+												i.fa.fa-search
+									li(role="menuitem" ng-repeat="ele in version_option.data|versionFilter:version_option.min:version_option.searchMax:'true'  track by $index")
+										a(href="javascript:void(0);" ng-click="chooseMaxVersion($event,ele)" ng-bind="ele.name")
+				.row
+					.col-sm-6
+						.input-group.padding-container
+							span.input-label crash最小次数
+							input.form-control(type="number" ng-model="crash_option.low" ng-change="inputMin()" style="text-align: center;")
+					.col-sm-6
+						.input-group.padding-container
+							span.input-label crash最大次数
+							input.form-control(type="number" ng-model="crash_option.high" ng-change="inputMax()" style="text-align: center;")
+				.row
+					.col-sm-12
+						div(style="padding:10px 30px;")
+							slider(ng-model="crash_option.low"  ng-model-range="crash_option.high" floor="{{crash_option.min}}" ceiling="{{crash_option.max}}")
+				.row
+					.col-sm-12(style="text-align:center;")
+						button.btn.btn-primary(style="width:150px" ng-click="loadData()") 查询
+
+		crash-table(ng-model="tableData" load-data="loadData(value)" operation="operation(opr,data)" page-length="pageLength" style="padding-top:20px;")
+	loading(is-loading="isLoading")
+
+
+			//- slider(floor="100" ceiling="200"  ng-model-low="crash_num_low"  ng-model-high="crash_num_high" )

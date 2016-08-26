@@ -1,0 +1,18 @@
+.modal-header
+    h4.modal-title 群组信息编辑
+.modal-body
+    form(ng-submit="ok()")
+        .form-group
+            label 群组ID
+            input.form-control(type="text" ng-model="group.group_id" required)
+        .form-group
+            label 群组名称
+            input.form-control(type="text" ng-model="group.group_name" required)
+        .form-group
+            label 群组描述
+            input.form-control(type="text" ng-model="group.remarks" )
+        .modal-footer
+            button.btn.btn-primary(type="submit") 保存
+            a.btn.btn-warning(ng-click="cancel()") 取消   
+
+

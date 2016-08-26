@@ -1,0 +1,10 @@
+.filter-select(uib-dropdown is-open="isopen" style="width:300px;")
+    button.form-control.full-width-container(uib-dropdown-toggle id="{{sid}}") 
+        span.seletext.select_spec(style="width:145px;") 选择叠加日期&nbsp;
+        span.caret.caret_spec
+    ul.full-width-container(uib-dropdown-menu role="menu" aria-labelledby="{{sid}}" style="padding:0px;")
+        li(role)
+            div(style="width:100%;padding: 5px 10px;")
+                button.btn.btn-primary(style="width:100%;" ng-click="confirm($event)") 确定
+        li(role="menuitem" ng-click="preventDismiss($event)")
+            uib-datepicker.myDatePicker(ng-model="activeDate" multi-select="data" )

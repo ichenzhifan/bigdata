@@ -1,0 +1,2 @@
+div
+	filter-select(ng-repeat="ele in data.data track by $index" text="{{ele.text}}" select-item="selectList[$index+1]" parent-item="selectList[$index]" data="ele.list" load-data="loadData(index)" level="{{$index}}") 

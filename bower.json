@@ -1,0 +1,40 @@
+{
+  "name": "MobileCMS",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-animate": "~1.4.8",
+    "angular-bootstrap": "~0.14.3",
+    "angular-cookies": "~1.4.8",
+    "angular-loading-bar": "~0.8.0",
+    "angular-motion": "~0.4.3",
+    "angular-resource": "~1.4.8",
+    "angular-sanitize": "~1.4.8",
+    "angular-strap": "~2.3.6",
+    "angular-ui-router": "~0.2.15",
+    "Autolinker.js": "~0.22.0",
+    "bootstrap": "~3.3.6",
+    "bootstrap-datepicker": "~1.5.0",
+    "es5-shim": "~4.3.1",
+    "ihover": "~1.0.0",
+    "jquery": "~2.1.4",
+    "jquery-mousewheel": "~3.1.13",
+    "json3": "~3.3.2",
+    "lodash": "~3.10.1",
+    "moment": "~2.10.6",
+    "plupload": "~2.1.8",
+    "qiniu-js-sdk": "https://github.com/qiniupd/qiniu-js-sdk.git",
+    "restangular": "~1.5.1",
+    "thenjs": "~2.0.1"
+  },
+  "devDependencies": {
+    "angular-scenario": "~1.2.14",
+    "angular-mocks": "~1.4.8",
+    "bootstrap-treeview": "^1.2.0",
+    "Swiper": "swiper#^3.3.1",
+    "echarts": "^3.1.1",
+    "datatables": "^1.10.11",
+    "angular-slider": "venturocket-angular-slider#^0.3.2",
+    "gm.datepickerMultiSelect": "gm.datepicker-multi-select#^1.0.10"
+  }
+}

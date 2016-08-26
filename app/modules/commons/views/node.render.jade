@@ -1,0 +1,17 @@
+.tree-handle(ui-tree-handle ng-click="toggle(node)")
+	.checkbox.icheck.icheckblock(ng-if="selectFlg")
+		label.sm
+			.icheckbox_square-blue(ng-class="{'checked':node.selected}" )
+				input(type="checkbox" )
+				ins.iCheck-helper(ng-click="chooseNode(node,$event)")
+	i.fa(class="{{node.iconClz}}") 
+	|{{node.title}} 
+	span.tree-node-icon.mini(ng-class="{'triexpand': !collapsed}" ng-if="node.nodes && node.nodes.length > 0") ▼
+	.node-group.opr-group(ng-if="modifyFlg")
+		span(ng-repeat="opr in nodeOprs() track by $index"  ng-click="nodeOperation($event,opr.fun,node)" class="{{opr.btnclz}}" uib-tooltip="{{opr.tip}}"  ) 
+			i.fa(class="{{opr.clz}}") 
+ol(ui-tree-nodes="" ng-model="node.nodes" )
+	li(ng-repeat="node in node.nodes track by $index" ui-tree-node ng-include="'modules/commons/views/node.render.html'")
+//- ichecker(i-model="node.selected" ng-if="selectFlg")
+//- a.btn.btn-flat.btn-default.btn-sm(ng-repeat="opr in nodeOprs() track by $index"  ng-click="nodeOperation(opr.fun,node)") 
+//- 			i.fa(class="{{opr.clz}}") 

@@ -1,0 +1,11 @@
+table.table.table-striped.table-bordered
+	thead
+		tr
+			th(ng-repeat="title in tableData.titles track by $index" ng-bind="title.title") 
+	tbody(ng-include="templateName")
+		//- tr(ng-repeat="row in tableData.data track by $index")  
+		//- 	td(ng-repeat="unit in row track by $index" ng-bind="unit")
+		//- 	td(ng-if="tableData.oprs")
+		//- 		.opr-group
+		//- 			button.btn.btn-flat(ng-repeat="opr in tableData.oprs track by $index" class="{{opr.clz}}" ng-click="operation(opr.fun,row)") {{opr.text}}
+					

@@ -1,0 +1,18 @@
+div
+	div(ui-tree data-drag-enabled="false")
+		ol(ui-tree-nodes="" ng-model="data")
+			li(ui-tree-node ng-repeat="dnode in data track by $index")
+				.tree-handle(ui-tree-handle ng-click="toggle(dnode)")
+					.checkbox.icheck.icheckblock(ng-if="selectFlg")
+						label.sm
+							.icheckbox_square-blue(ng-class="{'checked':dnode.selected}" )
+								input(type="checkbox" )
+								ins.iCheck-helper(ng-click="chooseNode(dnode,$event)")
+					i.fa(class="{{dnode.iconClz}}") 
+					|{{dnode.title}} 
+					span.tree-node-icon.mini(ng-class="{'triexpand': !collapsed}" ng-if="dnode.nodes && dnode.nodes.length > 0") ▼
+					.node-group.opr-group(ng-if="modifyFlg")
+						span(ng-repeat="opr in rootOprs() track by $index"  ng-click="nodeOperation($event,opr.fun,dnode)" class="{{opr.btnclz}}" uib-tooltip="{{opr.tip}}"  ) 
+							i.fa(class="{{opr.clz}}") 
+				ol(ui-tree-nodes="" ng-model="data[0].nodes")
+					li(ng-repeat="node in data[0].nodes track by $index" ui-tree-node ng-include="'modules/commons/views/node.render.html'")

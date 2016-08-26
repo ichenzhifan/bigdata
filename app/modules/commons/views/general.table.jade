@@ -1,0 +1,9 @@
+table.table.table-striped.table-bordered
+	thead
+		tr
+			th(ng-repeat="t in tableData.titles track by $index" ng-bind="t.title" ng-class="t.clz")
+	tbody
+		tr(ng-repeat="row in tableData.data")  
+
+			td(ng-repeat="col in row track by $index" ng-bind="col")
+

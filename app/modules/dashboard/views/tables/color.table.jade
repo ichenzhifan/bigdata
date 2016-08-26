@@ -1,0 +1,20 @@
+table.table.table-striped.table-bordered(cellspacing="0" width="100%")
+	thead
+		tr
+			th(rowspan="2" style="vertical-align: middle;text-align: center;") 首次使用时间
+			th(rowspan="2" style="vertical-align: middle;text-align: center;") 新增用户
+			th(colspan="10" style="vertical-align: middle;text-align: center;") 留存率
+		tr
+			
+			th 1天后
+			th 2天后
+			th 3天后
+			th 4天后
+			th 5天后
+			th 6天后
+			th 7天后
+			th 14天后
+			th 30天后
+	tbody
+		tr(ng-repeat="row in data track by $index")
+			td(ng-repeat="col in row track by $index" ng-bind="col")

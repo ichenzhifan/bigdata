@@ -1,0 +1,67 @@
+.main-header.navbar.navbar-static-top
+	.glyphicon.glyphicon-align-justify.menutoggle(ng-click="asidespin($event)")
+
+	//- .menuheader( align="left" ) 
+	//- 		h1(ng-bind="curApp.name")
+	.navmenu.collapse.navbar-collapse
+		ul.nav.navbar-nav
+			li(ui-sref-active="active")
+				a(ui-sref="dashboard.data") 
+					span.i-container
+						i.fa.fa-bar-chart-o
+					|&nbsp;数据图表
+			li(ui-sref-active="active" ng-if="user.is_admin === 1")
+				a(ui-sref="dashboard.manage") 
+					span.i-container
+						i.fa.fa-user
+					|&nbsp;后台管理
+			li(ui-sref-active="active" ng-if="user.group_id === 'root'")
+				a(ui-sref="dashboard.app") 
+					span.i-container
+						i.fa.fa-pencil
+					|&nbsp;应用管理
+	.navbar-custom-menu
+		ul.nav.navbar-nav
+			//- li.dropdown.messages-menu
+			//- 	a(href="javascript:void(0);")
+			//- 		i.fa.fa-envelope-o
+			//- 		span.label 4
+			li.dropdown.user.user-menu(uib-dropdown is-open="isopen")
+				a#useredit(href="javascript:void(0);" uib-dropdown-toggle)
+					img.user-image(src="image/avatar.png")
+					span.hidden-xs(ng-bind="user.name")
+					|&nbsp;
+					span.caret
+				ul(uib-dropdown-menu role="menu" aria-labelledby="useredit" style="background:#fff")
+					li(role="menuitem")
+						a(href="javascript:void(0);" ng-click="choosePassword($event)") 
+							i.fa.fa-lock &nbsp;
+							span 修改密码
+			//- li.borderLeft(ng-if="msgList.length > 0")
+			//- 	a(href="javascript:void(0);" ng-click="showCrashMsg()")
+			//- 		i.fa.fa-envelope-o
+			//- 		span.label.msg-num(ng-bind="msgList.length")
+			//- li.borderLeft
+			//- 	a(ui-sref="dashboard.doc" tooltip-placement="left-bottom"  uib-tooltip="页面数据说明" tooltip-append-to-body="true" )
+			//- 		i.fa.fa-file 
+			li.borderLeft
+				a(href="javascript:void(0);" ng-click="fullscreen()")
+					span.glyphicon.iconborder(ng-class="{'glyphicon-resize-small':flgs.fullflg,'glyphicon-resize-full':!flgs.fullflg}")
+			li.borderLeft
+				a(href="javascript:void(0);" ng-click="sighOut()")
+					i.fa.fa-sign-out
+
+
+
+
+//- .whaley-table-container.main-header
+//- 	.whaley-cell-container
+//- 		span.glyphicon.glyphicon-align-justify.menutoggle(ng-click="spin()")
+//- 	.whaley-cell-container(align="right")
+		//- .btn-group(uib-dropdown='', is-open='status.isopen')
+		//- 	button#single-button.btn.btn-transparent(type='button' ng-mouseover="showmenu()" ng-mouseleave="hidemenu()")
+		//- 		| {{zhibiao}}
+		//- 		span.caret
+		//- 	ul.contenttab.dropdown-menu(ng-class="{'showBlock':showFlg}" ng-mouseover="showmenu()" ng-mouseleave="hidemenu()")
+		//- 		//- li(ng-repeat="menu in data track by $index")
+		//- 		//- 	a(href='#' ng-bind="menu.name") 

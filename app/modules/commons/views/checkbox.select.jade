@@ -1,0 +1,30 @@
+.filter-select(uib-dropdown is-open="isopen" style="min-width:150px;")
+    button.form-control.full-width-container(uib-dropdown-toggle id="{{selectId}}") 
+        span.seletext.select_spec {{label}}&nbsp;
+        span.caret.caret_spec
+    ul.full-width-container.limit-drop-menu(uib-dropdown-menu role="menu" aria-labelledby="{{selectId}}" style="max-height:300px;")
+        li(role)
+            div(style="width:100%;padding:0px 10px;" )
+                button.btn.btn-primary(style="width:100%;" ng-click="confirm($event)") 确定
+            .input-group(style="margin: 5px 10px;" ng-click="preventDismiss($event)")
+                input.form-control(type="text" ng-model="search")
+                span.input-group-addon
+                    i.fa.fa-search
+        li(role="menuitem" style="overflow: auto;")
+            ul.limit-drop-menu.dropdown-menu(style="position: static;display: block;float: none;padding-left: 0px;border-top-left-radius: 0px;border-top-right-radius: 0px;width:100%;min-width: 100%;border-left: 0px;border-right: 0px;border-bottom: 0px;")
+                li(role="menuitem" )
+                    div(style="padding: 5px 0px 5px 20px;")
+                        .checkbox.icheck.icheckblock
+                            label.sm
+                                .icheckbox_square-blue(ng-class="{'checked':chosenAll}" )
+                                    input(type="checkbox" )
+                                    ins.iCheck-helper(ng-click="choose($event)")
+                                |&nbsp;全部
+                li(role="menuitem" ng-repeat="ele in optionList|valueFilter:search track by $index")
+                    div(style="padding: 5px 0px 5px 20px;")
+                        .checkbox.icheck.icheckblock
+                            label.sm
+                                .icheckbox_square-blue(ng-class="{'checked':ele.chosen}" )
+                                    input(type="checkbox" )
+                                    ins.iCheck-helper(ng-click="choose($event,ele)")
+                                |&nbsp;{{ele.name}}

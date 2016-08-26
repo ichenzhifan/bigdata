@@ -1,0 +1,6 @@
+div(style="width:{{data.width ? data.width:200}}px;")
+	.input-group
+		input.form-control(type="text" placeholder="{{data.tip}}"  ng-model="search")
+		span.input-group-btn
+			button.btn.btn-default(type="button" ng-click="doSearch()")
+				i.fa.fa-search

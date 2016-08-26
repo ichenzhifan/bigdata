@@ -1,0 +1,5 @@
+div.chart-wrapper
+	div.whaley-chart
+	a.legend-button(href="javascript:void(0);" ng-click="toggelLegend()")
+		i.fa(ng-class="toggleClz")
+		span.legend-label {{toggleClz === 'fa-toggle-on' ? '显示图例':'隐藏图例'}}

@@ -1,0 +1,18 @@
+.modal-header
+    h4.modal-title 应用信息编辑
+.modal-body
+    form(ng-submit="ok()")
+        .form-group
+            label 应用ID
+            input.form-control(type="text" ng-model="app.application_id" disabled)
+        .form-group
+            label 应用名称
+            input.form-control(type="text" ng-model="app.application_name" required)
+        .form-group
+            label 备注
+            input.form-control(type="text" ng-model="app.remarks" )
+        .modal-footer
+            button.btn.btn-primary(type="submit") 保存
+            a.btn.btn-warning(ng-click="cancel()") 取消   
+
+

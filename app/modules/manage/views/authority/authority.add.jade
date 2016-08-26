@@ -1,0 +1,50 @@
+
+
+.modal-header
+    h4.modal-title 新增权限信息编辑
+.whaley-flex-container.whaley-flex-element
+    .modal-body
+        form(ng-submit="ok()")
+            .row
+                .col-sm-6
+                    .form-group
+                        label 权限ID
+                        input.form-control(type="text" ng-model="authority.popedom_id" required)
+                .col-sm-6
+                    .form-group
+                        label 父权限ID
+                        input.form-control(type="text" ng-model="authority.parent_id" disabled)
+            .row
+                .col-sm-6
+                    .form-group
+                        label 权限名称
+                        input.form-control(type="text" ng-model="authority.title" required)
+                .col-sm-6
+                    .form-group
+                        label 权限图标
+                        icon-select(data="authority.icon" sid="authorityEditlist")
+            .row
+                .col-sm-6
+                    .form-group
+                        label 权限描述
+                        input.form-control(type="text" ng-model="authority.remarks")
+                .col-sm-6
+                    .form-group
+                        label 权限排序号
+                        input.form-control(type="number" ng-model="authority.rank" required)
+            .row
+                .col-sm-12
+                    .form-group
+                        ichecker(i-model="authority.display" i-text="是否显示")
+            .modal-footer(style="    text-align: right;width: 100%;border-left: 0px;")
+                button.btn.btn-primary(type="submit") 保存
+                a.btn.btn-warning(ng-click="cancel()") 取消 
+    .whaley-flex-rel-element
+        .whaley-abs-full-element
+            .configeditor(ng-jsoneditor ng-model="authority.configobj" options="options") 
+       
+
+
+
+ 
+

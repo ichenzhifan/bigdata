@@ -1,0 +1,5 @@
+div
+	div(ng-repeat="item in data track by $index")
+		.panel.panel-primary
+			.panel-heading(ng-bind="item.name" ng-click="itemClick(item,data)" style="cursor:pointer;")
+			.panel-body(uib-collapse="item.collapsed" ng-bind-html="item.content")

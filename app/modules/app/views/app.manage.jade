@@ -1,0 +1,11 @@
+.rel-container
+	section.content-header
+		h1  &nbsp;
+		ol.breadcrumb
+			li
+				a(href='javascript:void(0);')
+					i.fa(class="{{config.rootPath.iconClz}}")
+					| {{config.rootPath.text}}
+			li.active(ng-repeat="path in config.childPath track by $index" ng-bind="path")
+			//- li.active Dashboard
+	content-wrapper(direct="{{config.templateName}}" param="{{config}}" id="{{config.id}}") 

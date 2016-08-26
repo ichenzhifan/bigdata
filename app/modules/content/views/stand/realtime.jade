@@ -1,0 +1,10 @@
+.showarea
+	realtime-container(ng-model="generalData" ng-if="param.param.charts" )
+	.whaley-component.clearfix
+		//- checkbox-select.whaley-filter-container(id="{{param.id+'checkboxselect'}}" label="地区" option-list="optionsList")
+		filter-group.whaley-filter-container(ng-repeat="dt in param.param.filters track by $index" data="dt" load-contentdata="loadContentData()" config="param.param.config" ng-if="param.param.filters")
+		date-select.whaley-date-picker(data="param.param.config.dt" fmt="{{param.param.dateselect.format}}" load-contentdata="loadContentData()" config="param.param.config" param-name="{{param.param.dateselect.param}}"  ng-if="param.param.dateselect" sid="{{param.id+'dateSelect'}}")
+	loading(is-loading="isLoading" ng-if="param.param.showloading")
+
+
+	//- 

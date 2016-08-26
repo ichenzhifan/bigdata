@@ -1,0 +1,10 @@
+.full-width-container(uib-dropdown is-open="isopen")
+    button.form-control.full-width-container(uib-dropdown-toggle id="{{sid}}") 
+        span.seletext 
+        i.fa(class="{{data}}")
+        |&nbsp;
+        span.caret
+    ul.full-width-container.limit-drop-menu(uib-dropdown-menu role="menu" aria-labelledby="{{sid}}")
+        li(role="menuitem" ng-repeat="icon in icons track by $index")
+            a(href="javascript:void(0);" ng-click="chooseIcon($event,icon)")
+                i.fa(class="{{icon}}")

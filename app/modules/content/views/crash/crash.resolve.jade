@@ -1,0 +1,15 @@
+.modal-header
+    h4.modal-title 提交解决信息
+.modal-body
+    form(ng-submit="ok()")
+        .form-group
+            label 解决版本
+            input.form-control(type="text" ng-model="version" required placeholder='0.0.0')
+        .form-group
+            label 异常原因
+            textarea.form-control(ng-model="crash_reason" required style="height: 200px;")
+        .modal-footer
+            button.btn.btn-primary(type="submit") 保存
+            a.btn.btn-warning(ng-click="cancel()") 取消   
+
+

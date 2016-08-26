@@ -1,0 +1,39 @@
+.whaley-table-container.whaley-abs-full-element.login-container
+	.whaley-cell-container(style="padding-bottom: 10%;")
+
+		//- .login-title
+		//- 	img(src="image/logo.png")
+		.login-panel
+			.row
+				.col-sm-12
+					.logo-container
+						.logo
+			.row
+				.col-sm-12
+					.login-title
+						| {{appName}}
+			.login-body
+				form(role="form" ng-submit="submit()")
+					.input-group
+						span.input-group-addon.glyphicon.glyphicon-user.gly-adjust(aria-hidden="true")
+						input.form-control(type="text" placeholder="用户名" name="username" ng-model="user.username" required)
+					.input-group
+						span.input-group-addon.glyphicon.glyphicon-lock.gly-adjust(aria-hidden="true")
+						input.form-control(type="password" placeholder="密码" ng-model="user.password" required)
+					.input-group.spe-group
+						.col-sm-12
+							button.login-btn LOGIN 
+
+					//- .input-group.spe-group
+					//- 	.col-sm-12
+					//- 		.checkbox.icheck(style="margin-top: 3px;margin-bottom: 0px;text-align: right;")
+					//- 			label
+					//- 				.icheckbox_square-blue(ng-class="{'checked':isCheck}" )
+					//- 					input(type="checkbox" ng-click="check()")
+					//- 					ins.iCheck-helper
+					//- 				|&nbsp;记住用户名
+					//- .input-group.spe-group
+					//- 	.col-sm-12
+					//- 		button.login-btn.spe-group LOGIN 
+		.row
+			.col-sm-12.login-remark @微鲸-大数据

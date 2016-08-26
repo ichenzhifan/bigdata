@@ -1,0 +1,15 @@
+.chart-container.nav-tabs-custom(style="position:relative")
+	ul.nav.nav-tabs
+		li(ng-repeat="tab in param.param.charts"  ng-class="{'active':$index==activeIndex}")
+			a(href="javascript:void(0)" ng-click="select($event,tab,$index)" ng-bind="tab.name") 
+		li(ng-if="param.param.tip")
+			a(href="javascript:void(0)" tooltip-placement="bottom-right"  uib-tooltip-html="param.param.tip" tooltip-append-to-body="true" style="padding-left: 0px;" tooltip-class="customTip") 
+				i( class="fa fa-question-circle") 
+	echart(ng-hide="chartopt.unvisible")
+	
+	//- uib-tabset
+	//- 	uib-tab(heading="Justified") 
+	//- 		echart
+	//- 	uib-tab(heading="SJ") 
+	//- 		echart
+		//- uib-tab(heading="Long Justified") Long Labeled Justified content

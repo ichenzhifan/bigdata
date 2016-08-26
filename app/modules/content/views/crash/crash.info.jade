@@ -1,0 +1,13 @@
+.modal-header
+  h4.modal-title Crash日志详情
+.whaley-flex-container.whaley-flex-element
+  .nav-tabs-stack
+    ul.nav
+      li(ng-repeat="tab in tabs" ng-class="{active:curIndex == $index}" ng-click="changeTab(tab,$index,tabs)"  style="cursor:pointer;")
+        a {{tab.text}}
+  .modal-body.whaley-flex-element
+    collapse-panel(data="htmllist" style="color:#BD2828;" ng-if="curIndex == 0")
+    general-table(table-data="tableData" ng-if="curIndex == 1")
+.modal-footer(style="width: 100%;")
+  button.btn.btn-warning(ng-click="cancel()") 返回 
+

@@ -1,0 +1,12 @@
+.aside-path
+	.whaley-table-container.whaley-full-container
+		.whaley-cell-container.aside-container
+			ul.nav.nav-bar(style="overflow:auto;max-height:100%;")
+				li(ng-repeat="path in allmenus.config.config track by $index" ng-click="choosePath(path,$index,allmenus.config.config)")
+					.whaley-flex-container
+						div
+							i.fa.fa-star-o &nbsp;
+						.whaley-flex-element
+							span(ng-bind="path.name")
+			a(href="javascript:void(0);" ng-if="allmenus.config.config.length > 0")
+				i.fa.fa-hand-o-right 

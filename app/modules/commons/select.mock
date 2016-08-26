@@ -1,0 +1,50 @@
+module.exports = [
+	{
+		param:'abcd',
+		data:[
+			{
+				text:'请选择省份',
+				list:[
+					{id:1,name:'湖南省',value:'a'},
+					{id:2,name:'四川省',value:'b'},
+					{id:3,name:'湖北省',value:'c'},
+					{id:4,name:'江西省',value:'d'}
+				]
+			},{
+				text:'请选择城市',
+				list:[
+					{id:11,name:'aaa',value:'aaa',pid:1},
+					{id:12,name:'bbb',value:'bbb',pid:1},
+					{id:13,name:'ccc',value:'ccc',pid:2},
+					{id:14,name:'ddd',value:'ddd',pid:2},
+					{id:15,name:'eee',value:'eee',pid:3},
+					{id:16,name:'fff',value:'fff',pid:3},
+					{id:17,name:'ggg',value:'ggg',pid:4},
+					{id:18,name:'hhh',value:'hhh',pid:4}
+				]
+			},{
+				text:'请选择地区',
+				list:[
+					{id:111,name:'aaaa',value:'aaaa',pid:11},
+					{id:112,name:'bbba',value:'bbbb',pid:11},
+					{id:121,name:'cccc',value:'cccc',pid:12},
+					{id:122,name:'dddd',value:'dddd',pid:12},
+					{id:131,name:'eeee',value:'eeee',pid:13},
+					{id:132,name:'ffff',value:'ffff',pid:13},
+					{id:141,name:'gggg',value:'gggg',pid:14},
+					{id:142,name:'hhhh',value:'hhhh',pid:14},
+
+					{id:151,name:'iiii',value:'iiii',pid:15},
+					{id:152,name:'jjjj',value:'jjjj',pid:15},
+					{id:161,name:'kkkk',value:'kkkk',pid:16},
+					{id:162,name:'llll',value:'llll',pid:16},
+					{id:171,name:'mmmm',value:'mmmm',pid:17},
+					{id:172,name:'oooo',value:'oooo',pid:17},
+					{id:181,name:'pppp',value:'pppp',pid:18},
+					{id:182,name:'qqqq',value:'qqqq',pid:18},
+				]
+			}
+		]
+	}
+
+]

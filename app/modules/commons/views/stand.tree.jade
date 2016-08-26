@@ -1,0 +1,93 @@
+div
+	div(ui-tree data-drag-enabled="false")
+		ol(ui-tree-nodes="" ng-model="data")
+			li(ui-tree-node ng-repeat="dnode in data track by $index")
+				.tree-handle(ui-tree-handle ng-click="toggle(dnode)")
+					.checkbox.icheck.icheckblock(ng-if="selectFlg")
+						label.sm
+							.icheckbox_square-blue(ng-class="{'checked':dnode.selectCount == dnode.maxCount}" )
+								input(type="checkbox" )
+								ins.iCheck-helper(ng-click="chooseNode(dnode,$event)")
+					i.fa(class="{{dnode.icon}}") 
+					|{{dnode.title}}
+					span.tree-node-icon.mini(ng-class="{'triexpand': !collapsed}" ng-if="dnode.nodes && dnode.nodes.length > 0") ▼
+					.node-group.opr-group(ng-if="modifyFlg")
+						//- span(ng-repeat="opr in rootOprs() track by $index"  ng-click="nodeOperation($event,opr.fun,dnode)" class="{{opr.btnclz}}" uib-tooltip="{{opr.tip}}"  ) 
+						//- 	i.fa(class="{{opr.clz}}") 
+						span.primary(ng-click="nodeOperation($event,'add',dnode)" uib-tooltip="新建子菜单")
+							i.fa.fa-plus
+						span.primary(ng-click="nodeOperation($event,'edit',node)" uib-tooltip="编辑菜单" style="visibility:hidden;")
+							i.fa.fa-edit
+						span.warning(ng-click="nodeOperation($event,'group',node)" uib-tooltip="指派群组" style="visibility:hidden;")
+							i.fa.fa-users
+						span.warning(ng-click="nodeOperation($event,'user',node)" uib-tooltip="指派用户" style="visibility:hidden;")
+							i.fa.fa-user
+				ol(ui-tree-nodes="" ng-model="dnode.nodes" ng-if="dnode.nodes")
+					li(ng-repeat="node in dnode.nodes track by $index" ui-tree-node)
+						.tree-handle(ui-tree-handle ng-click="toggle(node)")
+							.checkbox.icheck.icheckblock(ng-if="selectFlg")
+								label.sm
+									.icheckbox_square-blue(ng-class="{'checked':node.own}" )
+										input(type="checkbox" )
+										ins.iCheck-helper(ng-click="chooseNode(node,$event)")
+							i.fa(class="{{node.icon}}") 
+							|{{node.title}}({{node.rank}})  
+							span.tree-node-icon.mini(ng-class="{'triexpand': !collapsed}" ng-if="node.nodes && node.nodes.length > 0") ▼
+							.node-group.opr-group(ng-if="modifyFlg")
+								//- span(ng-repeat="opr in nodeOprs() track by $index"  ng-click="nodeOperation($event,opr.fun,node)" class="{{opr.btnclz}}" uib-tooltip="{{opr.tip}}"  ) 
+								//- 	i.fa(class="{{opr.clz}}") 
+								span.primary(ng-click="nodeOperation($event,'add',node)" uib-tooltip="新建子菜单")
+									i.fa.fa-plus
+								span.primary(ng-click="nodeOperation($event,'edit',node)" uib-tooltip="编辑菜单")
+									i.fa.fa-edit
+								span.warning(ng-click="nodeOperation($event,'group',node)" uib-tooltip="指派群组")
+									i.fa.fa-users
+								span.warning(ng-click="nodeOperation($event,'user',node)" uib-tooltip="指派用户")
+									i.fa.fa-user
+						ol(ui-tree-nodes="" ng-model="node.nodes" ng-if="node.nodes")
+							li(ng-repeat="node in node.nodes track by $index" ui-tree-node)
+								.tree-handle(ui-tree-handle ng-click="toggle(node)")
+									.checkbox.icheck.icheckblock(ng-if="selectFlg")
+										label.sm
+											.icheckbox_square-blue(ng-class="{'checked':node.own}" )
+												input(type="checkbox" )
+												ins.iCheck-helper(ng-click="chooseNode(node,$event)")
+									i.fa(class="{{node.icon}}") 
+									|{{node.title}}({{node.rank}}) 
+									span.tree-node-icon.mini(ng-class="{'triexpand': !collapsed}" ng-if="node.nodes && node.nodes.length > 0") ▼
+									.node-group.opr-group(ng-if="modifyFlg")
+										//- span(ng-repeat="opr in nodeOprs() track by $index"  ng-click="nodeOperation($event,opr.fun,node)" class="{{opr.btnclz}}" uib-tooltip="{{opr.tip}}"  ) 
+										//- 	i.fa(class="{{opr.clz}}") 
+										span.primary(ng-click="nodeOperation($event,'add',node)" uib-tooltip="新建子菜单")
+											i.fa.fa-plus
+										span.primary(ng-click="nodeOperation($event,'edit',node)" uib-tooltip="编辑菜单")
+											i.fa.fa-edit
+										span.warning(ng-click="nodeOperation($event,'group',node)" uib-tooltip="指派群组")
+											i.fa.fa-users
+										span.warning(ng-click="nodeOperation($event,'user',node)" uib-tooltip="指派用户")
+											i.fa.fa-user
+								ol(ui-tree-nodes="" ng-model="node.nodes" ng-if="node.nodes")
+									li(ng-repeat="node in node.nodes track by $index" ui-tree-node)
+										.tree-handle(ui-tree-handle ng-click="toggle(node)")
+											.checkbox.icheck.icheckblock(ng-if="selectFlg")
+												label.sm
+													.icheckbox_square-blue(ng-class="{'checked':node.own}" )
+														input(type="checkbox" )
+														ins.iCheck-helper(ng-click="chooseNode(node,$event)")
+											i.fa(class="{{node.icon}}") 
+											|{{node.title}}({{node.rank}}) 
+											span.tree-node-icon.mini(ng-class="{'triexpand': !collapsed}" ng-if="node.nodes && node.nodes.length > 0") ▼
+											.node-group.opr-group(ng-if="modifyFlg")
+												//- span(ng-repeat="opr in nodeOprs() track by $index"  ng-click="nodeOperation($event,opr.fun,node)" class="{{opr.btnclz}}" uib-tooltip="{{opr.tip}}"  ) 
+												//- 	i.fa(class="{{opr.clz}}") 
+												//- span.primary(ng-click="nodeOperation($event,'add',node)" uib-tooltip="新建子菜单")
+												//- 	i.fa.fa-plus
+												
+												span.primary(ng-click="nodeOperation($event,'add',node)" uib-tooltip="新建子菜单" style="visibility:hidden;")
+													i.fa.fa-plus
+												span.primary(ng-click="nodeOperation($event,'edit',node)" uib-tooltip="编辑菜单")
+													i.fa.fa-edit
+												span.warning(ng-click="nodeOperation($event,'group',node)" uib-tooltip="指派群组")
+													i.fa.fa-users
+												span.warning(ng-click="nodeOperation($event,'user',node)" uib-tooltip="指派用户")
+													i.fa.fa-user

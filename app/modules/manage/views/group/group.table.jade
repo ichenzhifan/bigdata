@@ -1,0 +1,9 @@
+tbody
+	tr(ng-repeat="row in tableData.data track by $index")  
+		td(ng-bind="row.group_id")
+		td(ng-bind="row.group_name")
+		td(ng-bind="row.remarks")
+		td(ng-if="tableData.oprs")
+			.opr-group
+				button.btn.btn-flat(ng-repeat="opr in tableData.oprs track by $index" class="{{opr.clz}}" ng-click="operation(opr.fun,row)") {{opr.text}}
+					

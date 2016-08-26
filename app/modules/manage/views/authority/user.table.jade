@@ -1,0 +1,9 @@
+tr(ng-repeat="user in tableData.data track by $index")  
+	td
+		ichecker(i-model="user.own")
+	td(ng-bind="user.user_id")
+	td(ng-bind="user.name")
+	td(ng-bind="user.username")
+	td(ng-bind="user.group_name")
+	td(ng-bind="user.remarks")
+	//- td(ng-repeat="unit in user track by $index" ng-bind="unit")

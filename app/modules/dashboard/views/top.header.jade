@@ -1,0 +1,14 @@
+header.whaley-appheader(ng-mouseover="show()" ng-mouseleave="hide()" ng-class="{whaleyshow:flgs.showflg,spinned:flgs.spinned}")
+	.whaley-table-container.whaley-full-container.container
+		.row          
+			.col-md-3.col-sm-3.header-content
+				|Helios-BI报表
+			.col-md-6.col-sm-6
+			.col-md-3.col-sm-3(align="right")
+				.icongroup
+					.headericon.fullscreen(ng-click="fullscreen()")
+						span.glyphicon.iconborder(ng-class="{'glyphicon-resize-small':flgs.fullflg,'glyphicon-resize-full':!flgs.fullflg}")
+					.headericon(ng-click="spin()" )
+						span.glyphicon.glyphicon-pushpin.iconborder(ng-class="{active:flgs.spinned}")
+					.headericon.logout
+						span.glyphicon.glyphicon-log-out.iconborder 

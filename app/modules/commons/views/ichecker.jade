@@ -1,0 +1,6 @@
+.checkbox.icheck.icheckblock
+    label.sm
+        .icheckbox_square-blue(ng-class="{'checked':iModel}" )
+            input(type="checkbox" )
+            ins.iCheck-helper(ng-click="choose($event)")
+        |&nbsp;{{iText}}

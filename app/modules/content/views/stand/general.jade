@@ -1,0 +1,16 @@
+.showarea
+	echart-container(ng-model="generalData" chartval="param.param.config.chartval" ng-if="param.param.charts")
+	a(href="javascript:void(0)" tooltip-placement="bottom-right"  uib-tooltip-html="tipHtml" tooltip-append-to-body="true" style="padding-left: 0px;" tooltip-class="customTip" ng-if="!param.param.charts && param.param.tip") 
+		i( class="fa fa-question-circle") 
+	datatable-container(ng-if="param.param.table")
+	.whaley-component.clearfix
+		search-button.whaley-filter-container(data="param.param.search" load-contentdata="loadContentData()" config="param.param.config" ng-if="param.param.search")
+		ajax-select.whaley-filter-container(ng-repeat="searchfilter in param.param.searchfilters" url="{{searchfilter.url}}" url-body="{{searchfilter.body}}" auto-load="{{searchfilter.autoLoad}}" load-data="loadContentData()" config="param.param.config" ng-if="param.param.searchfilters" param-name="{{searchfilter.param}}" id="{{param.id}}ajaxSelect")
+
+		filter-group.whaley-filter-container(ng-repeat="dt in param.param.filters track by $index" data="dt" load-contentdata="loadContentData()" config="param.param.config" ng-if="param.param.filters")
+		date-picker.whaley-date-picker(data="param.param.config.dt" type="{{param.param.datepicker.type}}" start-day="{{param.param.datepicker.startDay}}" fmt="{{param.param.datepicker.format}}" load-contentdata="loadContentData()" no-load="{{param.param.datepicker.noload}}" ng-if="param.param.datepicker")
+		refresh-button.whaley-date-picker(ng-if="param.param.realtime") 刷新
+	loading(is-loading="isLoading" ng-if="param.param.showloading")
+
+
+	//- 

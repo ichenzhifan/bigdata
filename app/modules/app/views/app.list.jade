@@ -1,0 +1,17 @@
+div
+	table.table.table-striped.table-bordered
+		thead
+			tr
+				th 应用ID 
+				th 应用名称
+				th 备注
+				th 操作
+		tbody
+			tr(ng-repeat="appObj in tableData.data track by appObj.application_id")  
+				td(ng-bind="appObj.application_id")
+				td(ng-bind="appObj.application_name")
+				td(ng-bind="appObj.remarks")
+				td
+					.opr-group
+						button.btn.btn-flat.btn-primary.btn-sm(ng-click="tableOperation('edit',appObj)") 编辑
+						button.btn.btn-flat.btn-primary.btn-sm(ng-click="tableOperation('users',appObj)") 指派用户

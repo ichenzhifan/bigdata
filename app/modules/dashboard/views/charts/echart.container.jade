@@ -1,0 +1,22 @@
+.chart-container.nav-tabs-custom
+	ul.nav.nav-tabs
+		li(ng-repeat="tab in param.param.charts"  ng-class="{'active':$index==activeIndex}")
+			a(href="javascript:void(0)" ng-click="select($event,tab,$index)" ng-bind="tab.name") 
+		li(ng-if="param.param.tip")
+			a(href="javascript:void(0)" tooltip-placement="bottom-right"  uib-tooltip-html="tipHtml" tooltip-append-to-body="true" style="padding-left: 0px;" tooltip-class="customTip" ) 
+				i( class="fa fa-question-circle") 
+		//- li.active
+		//- 	a(href="javascript:void(0)" ng-click="select($event)") Justified
+		//- li
+		//- 	a(href="javascript:void(0)" ng-click="select($event)") SJ
+		//- li
+		//- 	a(href="javascript:void(0)" ng-click="select($event)") Long Labeled Justified content
+	echart(ng-hide="chartopt.unvisible")
+	div(style="position:absolute;left:10px;top:55px;" ng-if="chartopt.chartStatus")
+		iswitch(ontext="汇总"  offtext="趋势" flag="chartopt.chartStatus.status" on-change="changeStatus(flag)")
+	//- uib-tabset
+	//- 	uib-tab(heading="Justified") 
+	//- 		echart
+	//- 	uib-tab(heading="SJ") 
+	//- 		echart
+		//- uib-tab(heading="Long Justified") Long Labeled Justified content

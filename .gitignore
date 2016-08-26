@@ -1,0 +1,16 @@
+node_modules
+.tmp
+.sass-cache
+app/components
+.DS_Store
+*.tar.gz
+*.zip
+jsconfig.json
+!app/styles/jquery.mCustomScrollbar.min.css
+!app/styles/bootstrap.min.css
+!app/styles/jquery.mCustomScrollbar.min.css
+*.html
+report
+*.log
+.idea
+deploy.sh

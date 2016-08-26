@@ -1,0 +1,8 @@
+.bootstrap-switch(style="width:{{basewidth ?basewidth*2+'px':'auto'}}" ng-click="choose()")
+	.bootstrap-switch-container(style="width:{{basewidth ?basewidth*3+'px':'auto'}};left:{{flag?'0px':-basewidth+'px'}}")
+		span.bootstrap-switch-handle-on.bootstrap-switch-primary(ng-bind="ontext" style="width:{{basewidth ?basewidth+'px':'auto'}}")
+		span.bootstrap-switch-handle-label(style="width:{{basewidth ?basewidth+'px':'auto'}}") &nbsp;
+		span.bootstrap-switch-handle-off.bootstrap-switch-default(ng-bind="offtext" style="width:{{basewidth ?basewidth+'px':'auto'}}")
+
+
+//- input(type="checkbox"  data-on-text="{{ontext}}" data-off-text="{{offtext}}") bootstrap-switch-focused

@@ -1,0 +1,17 @@
+div(style="position:relative;")
+	.crashTableContainer
+	//- table.table.table-striped.table-bordered.crash-table
+	//- 	thead
+	//- 		tr
+	//- 			th(ng-repeat="t in tableData.titles track by $index" ng-bind="t.title" ng-class="t.clz")
+	//- 	tbody
+	//- 		//- tr(ng-repeat="row in tableData.data track by row[0]") 
+	//- 		tr(ng-repeat="row in tableData.data")  
+
+	//- 			td(ng-repeat="col in row track by $index" ng-bind-html="col")
+	//- 			td
+	//- 				.opr-group
+	//- 					button.btn.btn-flat(ng-repeat="opr in tableData.oprs track by $index" class="{{opr.clz}}" ng-click="tableOperation(opr.fun,row)") {{opr.text}}
+	.page-select-container
+		whaley-select(select-id="carshPageSelect" select-item="pageLength" load-data="loadTableData(value)")
+

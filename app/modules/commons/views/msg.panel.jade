@@ -1,0 +1,7 @@
+.panel.msg-panel.whaley-column-flex-container(ng-if="flg" )
+	.panel-heading
+		i.fa.fa-warning
+			span(ng-bind="title") hello
+		span(style="padding-left:10px;float:right;cursor:pointer;" ng-click="hide($event)")
+			i.fa.fa-close
+	.panel-body.whaley-flex-element(ng-bind="content")

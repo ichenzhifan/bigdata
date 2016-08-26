@@ -1,0 +1,10 @@
+aside.whaley-appmenu( ng-class="{spinned:asidemenu.spinned}")
+	.whaley-column-flex-container.whaley-flex-element.menuwrapper
+		.menusearch
+			.input-group.input-stand
+				input.form-control(type="text" placeholder="Search..." ng-model="searchMenu")
+				span.input-group-btn
+					button.btn.btn-flat(type="button")
+						i.fa.fa-search
+		.menusplit
+		tree-view.whaley-flex-element.menutree.jquery-accordion-menu(ng-model="menutree")

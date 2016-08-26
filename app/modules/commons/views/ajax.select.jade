@@ -1,0 +1,14 @@
+.filter-select(uib-dropdown is-open="isopen" style="width:180px;")
+    button.form-control.full-width-container(uib-dropdown-toggle id="{{id}}") 
+        span.seletext.select_spec(style="width:145px;") {{selectItem.name}}&nbsp;
+        span.caret.caret_spec
+    ul.full-width-container(uib-dropdown-menu role="menu" aria-labelledby="{{id}}" style="padding:0px;")
+        li(role)
+            .input-group(style="margin: 5px 10px;" ng-click="preventDismiss($event)")
+                input.form-control(type="text" ng-model="search")
+                span.input-group-addon
+                    i.fa.fa-search
+        li(role="menuitem" )
+            ul.limit-drop-menu.dropdown-menu(style="position: static;display: block;float: none;padding-left: 0px;border-top-left-radius: 0px;border-top-right-radius: 0px;")
+                li(role="menuitem" ng-repeat="ele in optionlist|valueFilter:search track by $index")
+                    a(href="javascript:void(0);" ng-click="choose($event,ele)" ng-bind="ele.name")

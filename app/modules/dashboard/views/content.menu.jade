@@ -1,0 +1,20 @@
+aside.whaley-appmenu( ng-class="{spinned:asidemenu.spinned}")
+	.whaley-column-flex-container.whaley-flex-element.menuwrapper
+		.appselect
+			.btn-group.whaley-full-container(uib-dropdown is-open="isopen")
+				button#applist.btn.whaley-full-container(uib-dropdown-toggle ) 
+					span.seletext {{curApp.name}}&nbsp;
+					span.caret
+				ul.whaley-full-container(uib-dropdown-menu role="menu" aria-labelledby="applist")
+					li(role="menuitem" ng-repeat="app in applist track by $index")
+						a(href="javascript:void(0);"  ng-click="chooseApp($event,app)")
+							span(ng-bind="app")
+							i.fa.fa-arrow-up(style="float: right;margin-top: 3px;" ng-click="sortApp($event,app,$index)")
+		.menusplit
+		.menusearch
+			.input-group.input-stand
+				input.form-control(type="text" placeholder="Search..." ng-model="searchMenu")
+				span.input-group-btn
+					button.btn.btn-flat(type="button")
+						i.fa.fa-search
+		content-treeview.whaley-flex-container.menutree.jquery-accordion-menu(ng-model="menutree")

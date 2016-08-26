@@ -1,0 +1,9 @@
+.modal-header
+	h4.modal-title 群组权限信息
+.whaley-flex-container.whaley-flex-element
+	.modal-body.whaley-flex-element
+		stand-tree(data="authorityData" select-flg="true")
+	.modal-footer
+		button.btn.btn-primary(ng-click="ok()") 保存
+		button.btn.btn-warning(ng-click="cancel()") 取消   
+
